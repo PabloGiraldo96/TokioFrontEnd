@@ -87,20 +87,23 @@ const textStory = document.querySelector('.titleNight');
 
 // TAKING THE CHARS
 
-
 const strText = text.textContent;
 const strTextLife = textLife.textContent;
-//const strTextNight = textNight.textContent;
-//const strTextStory = textStory.textContent;
-
-
-
+const strTextNight = textNight.textContent;
+const strTextStory = textStory.textContent;
 
 // SPLIT TITLES
 
 const splitText = strText.split("");
 
 const splitTextLife = strTextLife.split("");
+
+const splitTextNight = strTextNight.split("");
+
+const splitTextStory = strTextStory.split("");
+
+console.log(splitText, splitTextLife, splitTextNight, splitTextStory)
+
 
 
 
@@ -109,19 +112,36 @@ for(let i = 0; i < splitText.length; i++){
 }
 
 
-
-for(let i = 0; i < splitTextLife.length; i++){
-    textLife.innerHTML+= "<span>" + splitTextLife[i] +"</span>"
+for(let i = 0; i <splitTextLife.length; i++){
+    textLife.innerHTML+= "<span>" + splitTextLife[i] + "</span>"
 }
 
 
-console.log(splitTextLife)
-//
-//
-//
 //
 //    textNight.innerHTML+= "<span>" + splitText[i] +"</span>"
 //    textStory.innerHTML+= "<span>" + splitText[i] +"</span>"
+
+
+
+let charLife = 0; 
+let intervalLife = setInterval(onTickLife, 100)
+
+function onTickLife(){
+const spanLife = textLife.querySelectorAll('span')[charLife];
+    spanLife.classList.add('fade');
+    console.log(splitTextLife)
+    charLife++
+    if(charLife === splitTextLife.length){
+        completeLife();
+    return
+}
+}
+
+function completeLife(){
+clearInterval(intervalLife)
+intervalLife = null;
+}
+
 
 
 let char = 0;
@@ -129,21 +149,14 @@ let char = 0;
 let interval = setInterval(onTick, 80)
 
 function onTick(){
-
 const span = text.querySelectorAll('span')[char];
-span.classList.add('fade');
-char++
-
-
-
-if(char === splitText.length){
-complete();
-return
-
+    span.classList.add('fade');
+    char++
+    if(char === splitText.length){
+        complete();
+    return
 }
 }
-
-
 
 function complete(){
 clearInterval(interval)

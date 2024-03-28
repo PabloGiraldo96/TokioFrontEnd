@@ -55,7 +55,6 @@ span{
     opacity: 0;
     transition: all 0.5s ease;
     transform: translateY(-850px);
-    transform: scale(-20px);
     display: inline-block;
 }
 
@@ -68,15 +67,14 @@ span.fade{
 
 spanLife{
     opacity: 0;
-    transition: all 0.5s ease;
-    transform: translateY(-550px);
-    transform: scale(-250px);
-    display: inline-block;
+    transition: all 0.8s ease;
+    transform: translateX(-550px);
+    display: inline;
 }
 
 spanLife.fade{
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateX(0px);
     /*transform: translateX(0px);*/
 
 }
