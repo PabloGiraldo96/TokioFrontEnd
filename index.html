@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"><link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<title>TokioFront</title>
+</head>
+<body class="body">
+    <div class="bodyContainer">
+        <!-- Imagen opaca -->
+        <img src="./img/tokioNightOpaque.jpg" alt="Imagen opaca" class="opaque-image" id="Elemento">
+        
+        <!-- Resto del contenido -->
+        <div class="navBar">
+            <ul>
+                <li>HOME</li>
+                <li>NEW</li>
+                <li>US</li>
+            </ul>
+        </div>
+
+        <!-- SWIPER -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="./img/tokioNight.jpg" alt="TokioNight" loading="lazy" class="swiper-img" id="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/tokioK.jpg" alt="TokioOne" loading="lazy" class="swiper-img">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/Tokyo-night-view-1200x675.jpg" loading="lazy" alt="TokioNight2" class="swiper-img">
+                </div>    
+                <div class="swiper-slide">
+                    <img src="./img/img_41.jpg" loading="lazy" alt="TokioNight3" class="swiper-img">
+                </div>
+            </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev" onclick="a()"></div>
+        </div>
+            <div class="swiper-button-next" onclick="a()"></div>
+
+        <div class="title-container">
+            <h1 class="title">Tokio</h1>
+            <h1 class="title">lifestyle</h1>
+            <h1 class="title">Story</h1>
+            <h1 class="title">Nights</h1>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>
