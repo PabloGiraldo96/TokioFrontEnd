@@ -76,44 +76,77 @@ var config = { attributes: true, childList: true, subtree: true };
 observer.observe(document.body, config);
 
 
-// Obtener todos los títulos
-const titles = document.querySelectorAll('.title');
+const text = document.querySelector('.titleTokio');
 
-// Iterar sobre cada título
-titles.forEach(title => {
-    // Obtener el texto del título
-    const text = title.textContent;
-    
-    // Crear un nuevo HTML con cada carácter envuelto en un span
-    const newText = [...text].map(char => `<span>${char}</span>`).join('');
+const textLife = document.querySelector('.titleLife');
 
-    // Reemplazar el contenido del título con el nuevo HTML
-    title.innerHTML = newText;
+const textNight = document.querySelector('.titleStory');
 
-    // Obtener todos los caracteres del título
-    const chars = title.querySelectorAll('span');
+const textStory = document.querySelector('.titleNight');
 
-    // Iterar sobre cada carácter
-    chars.forEach((char, index) => {
-        // Definir la animación inicial
-        char.style.opacity = 0;
 
-        // Definir la animación de entrada
-        char.style.transition = 'opacity 3.5s';
-        char.style.transitionDelay = `${index * 0.1}s`; // Retrasar la animación de cada carácter
-        char.style.opacity = 1;
+// TAKING THE CHARS
 
-    // Añadir un pequeño retraso a cada título
-    title.style.transitionDelay = `${titles.length * 2.3}s`;
 
-    // Hacer visible el título
-    title.style.opacity = 1;
-    
+const strText = text.textContent;
+const strTextLife = textLife.textContent;
+//const strTextNight = textNight.textContent;
+//const strTextStory = textStory.textContent;
 
 
 
-    console.log(index)
-    });
+
+// SPLIT TITLES
+
+const splitText = strText.split("");
+
+const splitTextLife = strTextLife.split("");
 
 
-});
+
+for(let i = 0; i < splitText.length; i++){
+    text.innerHTML+= "<span>" + splitText[i] +"</span>"
+}
+
+
+
+for(let i = 0; i < splitTextLife.length; i++){
+    textLife.innerHTML+= "<span>" + splitTextLife[i] +"</span>"
+}
+
+
+console.log(splitTextLife)
+//
+//
+//
+//
+//    textNight.innerHTML+= "<span>" + splitText[i] +"</span>"
+//    textStory.innerHTML+= "<span>" + splitText[i] +"</span>"
+
+
+let char = 0;
+
+let interval = setInterval(onTick, 80)
+
+function onTick(){
+
+const span = text.querySelectorAll('span')[char];
+span.classList.add('fade');
+char++
+
+
+
+if(char === splitText.length){
+complete();
+return
+
+}
+}
+
+
+
+function complete(){
+clearInterval(interval)
+interval = null;
+}
+
