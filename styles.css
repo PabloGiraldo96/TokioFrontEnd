@@ -1,27 +1,36 @@
 
 body{
+    margin: 0;
+    scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: hidden;
 	display: flex;
-	height: 120vh;
+    flex-direction:row; /* Cambiado para que los elementos se apilen verticalmente en dispositivos móviles */
+    align-items: center; /* Centrado vertical de todo el contenido */
+	height: 100vh;
 }
 
 .bodyContainer{
 	justify-content: center;
 	align-items: center;
 	text-align: end;
+    height: auto; /* Cambiado a auto para que se ajuste al contenido */
+    padding: 20px; /* Agregado para dar espacio alrededor del contenido */
 }
+
 .navBar{ 
 	list-style-type: none;
 }
 
 li {
     position: relative;
-    right: 50px;
+    right: -150px;
     display: inline;
     float: left;
     padding: 50px;
     cursor: pointer;
     text-decoration: none;
+    z-index: 1;
 }
 
 li:hover {
@@ -29,7 +38,7 @@ li:hover {
 }
 
 ul {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Oswald", sans-serif;
     font-size: 28px;
     letter-spacing: 2px;
     list-style-type: none;
@@ -37,23 +46,38 @@ ul {
     padding: 0;
 }
 
-h1{
+.titleTokio,
+.titleStory,
+.titleNight {
     position: relative;
+
     text-transform: uppercase;
-    top: -300px;
-    left: -80px;
     margin: 0;
-    font-size: 7rem;
+    font-size: 10rem;
     text-align: center;
-    letter-spacing: 2rem;
-    color: black;
+    z-index: 1;
+    letter-spacing: 3.5rem;
     font-family: "Oswald", sans-serif;
 }
 
+.titleLife{
+    font-size: 8rem;
+    position: relative;
+    text-transform: uppercase;
+    top: -25rem;
+    left: 8rem;
+    margin: 0;
+    font-size: 8rem;
+    text-align: center;
+    z-index: 1;
+    letter-spacing: 3.5rem;
+    color: rgb(0, 0, 0);
+    font-family: "Oswald", sans-serif;
+}
 
 span{
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     transform: translateY(-850px);
     display: inline-block;
 }
@@ -61,53 +85,57 @@ span{
 span.fade{
     opacity: 1;
     transform: translateY(0px);
-    /*transform: translateX(0px);*/
+    animation: 0.5s infinite alternate; 
+}
 
+span.out{
+    opacity: 0;
+    transform: translateY(850px);
 }
 
 spanLife{
     opacity: 0;
     transition: all 0.8s ease;
-    transform: translateX(-550px);
+    transform: translateY(1550px);
     display: inline;
 }
 
 spanLife.fade{
+    display: inline-block;
+    animation: titilar 0.5s infinite alternate; 
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateY(0px);
     /*transform: translateX(0px);*/
 
 }
 
 
-
-
-
-
-
-
-
-
 .swiper{
-    width: 85vh;
+    width: 30vh;
     height: 75vh;
 	position: relative;
-    left: 950px;
+    left: 50rem;
+    top: -5rem;
     overflow: hidden;
-	z-index: 1;
+    
 }
-
 
 .opaque-image {
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0.7;
     width: 100%;
-    height: 120vh;
-    opacity: 0.3;
-    z-index: 1; 
-    color: rgba(0, 0, 0, 0.5); /* Color de fondo opaco */
-    z-index: -999; /* Asegura que esté por encima de las imágenes del swiper */
-    pointer-events: none; /* Evita que interfiera con la interacción del usuario */
+    height: 100%;
 }
 
+.opaque-image::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
