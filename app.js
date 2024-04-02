@@ -23,7 +23,7 @@ const swiper = new Swiper('.swiper', {
         shadowOffset: 10,
         shadowScale: 0.0001,
     },
-    speed: 1000,
+    speed: 2000,
     loop: true,
 });
 
@@ -90,7 +90,7 @@ for(i=0; i< splitTextNight.length; i++){
 // FUNCION ONTICK() TITULO LIFESTYLE
 
 let charLife = 0; 
-let intervalLife = setInterval(onTickLife, 400)
+let intervalLife = setInterval(onTickLife, 800)
 
 function onTickLife(){
     const spanLife = textLife.querySelectorAll('span')[charLife];
@@ -143,7 +143,7 @@ elementos.src= source
 
 function a(){
 
-setTimeout(cambioImagen,150)
+setTimeout(cambioImagen,100)
 
 }
 
@@ -175,14 +175,8 @@ var config = { attributes: true, childList: true, subtree: true };
 // observar el DOM
 observer.observe(document.body, config);
 
-// DESAPARECER TITULOS CUANDO NO SON LLAMADOS
-
-textLife.style.display="none";
-textNight.style.display="none";
-textStory.style.display="none"; 
-
 function b (){
-setTimeout(cambioTitulo,150)
+setTimeout(cambioTitulo,1500)
 }
 
 let cambioTitulo = (alt) => {
@@ -205,8 +199,7 @@ switch (alt) {
             break;
         default:
             textStory.style.display = "inline-block";
+            textStory.style.color="white";
             break;
     }
 }
-
-//console.log(text)

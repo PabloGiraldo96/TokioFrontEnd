@@ -5,17 +5,19 @@ body{
     overflow-x: hidden;
     overflow-y: hidden;
 	display: flex;
-    flex-direction:row; /* Cambiado para que los elementos se apilen verticalmente en dispositivos móviles */
-    align-items: center; /* Centrado vertical de todo el contenido */
+    flex-direction:row; 
+    align-items: center;
 	height: 100vh;
+    animation: gradient 5s ease-in-out;
 }
 
 .bodyContainer{
 	justify-content: center;
 	align-items: center;
 	text-align: end;
-    height: auto; /* Cambiado a auto para que se ajuste al contenido */
-    padding: 20px; /* Agregado para dar espacio alrededor del contenido */
+    height: auto; 
+    padding: 20px; 
+    form-sizing: content;
 }
 
 .navBar{ 
@@ -138,4 +140,209 @@ spanLife.fade{
     opacity: 1;
     height: 100%;
     width: 100%;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 30%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 40%;
+	}
+
+from{
+  background-color: rgb(83, 83, 83);
+}
+  to{
+    background-color: transparent;
+}
+}
+
+
+@media only screen and (max-width: 390px) {
+    body {
+        max-width: fit-content;
+        display: flex;
+    }
+
+ul{
+    display: inline-block;
+    color: transparent;
+}
+    .bodyContainer{
+    
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .swiper {
+        position: absolute;
+        left: -10rem;
+        top: -5rem;
+        height: 2rem;
+        width: 3rem;
+    }
+
+    .titleTokio {
+        font-size: 8rem;
+        letter-spacing: 6px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+
+    .titleLife {
+        /*position: absolute;*/
+        font-size: 6.5rem;
+        letter-spacing: 3px;
+        writing-mode: vertical-lr; 
+        white-space: nowrap; 
+        margin-top: 50vh; 
+    }
+
+    .titleNight {
+        font-size: 8.5rem;
+        color: rgb(255, 255, 255);
+        letter-spacing: 9px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+
+    .titleStory {
+        font-size: 6.5rem;
+        letter-spacing: 5px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    body {
+        max-width: fit-content;
+        display: flex;
+    }
+
+ul{
+    display: inline-block;
+    color: transparent;
+}
+    .bodyContainer{
+    
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .swiper {
+        position: absolute;
+        left: -10rem;
+        top: -5rem;
+        height: 2rem;
+        width: 3rem;
+    }
+
+    .titleTokio {
+        font-size: 8rem;
+        letter-spacing: 6px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+
+    .titleLife {
+        /*position: absolute;*/
+        font-size: 6.5rem;
+        letter-spacing: 3px;
+        writing-mode: vertical-lr; 
+        white-space: nowrap; 
+        margin-top: 50vh; 
+    }
+
+    .titleNight {
+        font-size: 8.5rem;
+        color: rgb(255, 255, 255);
+        letter-spacing: 9px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+
+    .titleStory {
+        font-size: 6.5rem;
+        letter-spacing: 5px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+}
+@media only screen and (max-width: 768px) {
+    body {
+        max-width: fit-content;
+        display: flex;
+    }
+
+ul{
+    display: inline-block;
+    color: transparent;
+}
+    .bodyContainer{
+    
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .swiper {
+        position: absolute;
+        left: -10rem;
+        top: -5rem;
+        height: 2rem;
+        width: 3rem;
+    }
+
+    .titleTokio {
+        font-size: 8rem;
+        letter-spacing: 6px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+
+    .titleLife {
+        position: absolute;
+        font-size: 6.5rem;
+        letter-spacing: 3px;
+        writing-mode: vertical-lr; 
+        white-space: nowrap; 
+        margin-top: 50vh; 
+    }
+
+    .titleNight {
+        font-size: 8.5rem;
+        color: rgb(255, 255, 255);
+        letter-spacing: 9px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
+
+    .titleStory {
+        font-size: 6.5rem;
+        letter-spacing: 5px;
+        writing-mode: vertical-rl; 
+        text-orientation: mixed; 
+        white-space: nowrap; 
+        margin-top: 10vh; 
+    }
 }
